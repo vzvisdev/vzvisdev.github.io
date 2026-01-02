@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Boonie | Valeria Zavaleta</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #FDFFF6;
+    color: #022A81;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  a {
+    color: #022A81;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+  }
+
+  .image-wrapper img.image-1 { opacity: 1; z-index: 2; }
+  .image-wrapper img.image-2 { opacity: 0; z-index: 1; }
+  .image-wrapper:hover img.image-1 { opacity: 0; }
+  .image-wrapper:hover img.image-2 { opacity: 1; }
+
+  .container {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .left, .right {
+    flex: 1;
+  }
+
+  .left img, .top-right img, .bottom-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bottom-right img {
+    margin-top: 5px; /* optional visual adjustment */
+  }
+
+  .card-section {
+    margin-bottom: 50px;
+  }
+
+  .card-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .media-video {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Boonie</h1>
+  <p>3D Character</p>
+</header>
+
+<section>
+  <div class="card">
+    <!-- 3D Models Videos -->
+    <div class="card-section">
+      <h3>3D Models</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/360.mp4" type="video/mp4">
+      </video>
+     
+    </div>
+
+    <!-- Shaders and Textures -->
+    <div class="card-section">
+      <h3>Fur Groom</h3>
+       <video class="media-video" autoplay loop muted>
+        <source src="videos/hair.mp4" type="video/mp4">
+      </video>
+
+<!-- Line Art -->
+    <div class="card-section">
+      <h3>Procedural Shaders</h3>
+       <video class="media-video" autoplay loop muted>
+        <source src="videos/shader.mp4" type="video/mp4">
+      </video>
+      </div>
+    </div>
+    </div>
+
+    <!-- Animation -->
+    <div class="card-section">
+      <h3>Expressions</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/shapekeys.mp4" type="video/mp4">
+      </video>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/expressions.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Text Description -->
+    <div class="card-section">
+      <p>Pig Island is a stylized character project focused on shape language, appealing silhouettes, and real-time optimization for games.</p>
+      <p><strong>My role:</strong> Modeling, sculpting, texturing, and lookdev.<br>
+      <strong>Tools:</strong> Blender,

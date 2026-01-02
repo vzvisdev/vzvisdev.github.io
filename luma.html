@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pig Island | Valeria Zavaleta</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #FDFFF6;
+    color: #022A81;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  a {
+    color: #022A81;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+  }
+
+  .image-wrapper img.image-1 { opacity: 1; z-index: 2; }
+  .image-wrapper img.image-2 { opacity: 0; z-index: 1; }
+  .image-wrapper:hover img.image-1 { opacity: 0; }
+  .image-wrapper:hover img.image-2 { opacity: 1; }
+
+  .container {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+
+  .left, .right {
+    flex: 1;
+  }
+
+  .left img, .top-right img, .bottom-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bottom-right img {
+    margin-top: 5px; /* optional visual adjustment */
+  }
+
+  .card-section {
+    margin-bottom: 50px;
+  }
+
+  .card-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .media-video {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .image-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  .center-img {
+  display: block;
+  margin: 0 auto 18px; /* abajo */
+
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Luma</h1>
+  <p>3D Character</p>
+</header>
+
+<section>
+  <div class="card">
+
+    <!-- 3D Models Videos -->
+    <div class="card-section">
+      <h3> Creating my own collectible doll</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/closeup.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Shaders and Textures -->
+    <div class="card-section">
+      <h3>Character 3D Model</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/model.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Shaders and Textures -->
+    <div class="card-section">
+      <h3>Shaders and Textures</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/shade.mp4" type="video/mp4">
+      </video>
+    </div>
+
+<!-- Line Art -->
+    <div class="card-section">
+      <h3>Line Art</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/line.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!--  -->
+    <div class="card-section">
+      <h3>Rig and Skin</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/rig.mp4" type="video/mp4">
+      </video>
+    </div>
+
+     <!--  -->
+    <div class="card-section">
+      <h3>Compositing</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/compositing.mp4" type="video/mp4">
+      </video>
+    </div>
+
+       <!--  -->
+    <div class="card-section">
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/luma.mp4" type="video/mp4">
+      </video>
+    </div>
+
+         <!--  -->
+    <div class="card-section">
+      <h3>Prop</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/bass.mp4" type="video/mp4">
+      </video>
+    </div>
+        <!--  -->
+    <div class="card-section">
+      <h3>Prop Shaders </h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/shaders.mp4" type="video/mp4">
+      </video>
+      <img src="images/sticker0.png" alt="Pig Island concept art" width="700" class="center-img">
+
+       <video class="media-video" autoplay loop muted>
+        <source src="videos/Stickers.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!--  -->
+    <div class="card-section">
+      <h3>Lineart</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/Lineartt.mp4" type="video/mp4">
+      </video>
+    </div>
+       <!--  -->
+    <div class="card-section">
+      <h3>Compositing</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/sparkle.mp4" type="video/mp4">
+      </video>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/bassf.mp4" type="video/mp4">
+      </video>
+    </div>
+
+
+    <!-- Text Description -->
+    <div class="card-section">
+      <p>Pig Island is a stylized character project focused on shape language, appealing silhouettes, and real-time optimization for games.</p>
+      <p><strong>My role:</strong> Modeling, sculpting, texturing, and lookdev.<br>
+      <strong>Tools:</strong> Blender,
