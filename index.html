@@ -1,253 +1,184 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Valeria Zavaleta | Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Valeria Zavaleta | Portfolio</title>
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #FDFFF6;
-      color: #022A81;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FDFFF6;
+  color: #022A81;
 
-    /* NAVBAR */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background-color: rgba(15, 15, 15, 0.9);
-    }
+  position: relative;      /* 🔥 REQUIRED */
+  overflow-x: hidden;      /* 🔥 FIX MOBILE SCROLL */
+}
 
-    .nav-logo {
-      color: white;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: rgba(15, 15, 15, 0.9);
+}
 
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
-    }
+.nav-logo {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
-    .nav-menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
 
-    .nav-menu a:hover {
-      color: #7dd3fc;
-    }
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+}
 
-    /* DROPDOWN */
-    .dropdown {
-      position: relative;
-    }
+/* HEADER */
+header {
+  padding: 10px 20px;
+  text-align: center;
+}
 
-    .dropdown-menu {
-      position: absolute;
-      top: 120%;
-      left: 0;
-      background-color: #1a1a1a;
-      list-style: none;
-      padding: 10px 0;
-      display: none;
-      min-width: 160px;
-      border-radius: 8px;
-    }
+.logo {
+  width: 280px;
+  margin: 0 auto 20px;
+  display: block;
+}
 
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 16px;
-      color: white;
-    }
+/* ======================
+   DECOR — DESKTOP
+   ====================== */
+.deco {
+  position: fixed;      /* desktop behavior */
+  z-index: -1;
+  opacity: 0.7;
+  pointer-events: none;
+}
 
-    .dropdown-menu a:hover {
-      background-color: #2a2a2a;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
+.deco-1 { bottom: 25%; left: -60px; width: 270px; }
+.deco-2 { bottom: 20%; left: 240px; width: 120px; }
+.deco-3 { bottom: 1%;  left: -40px; width: 350px; }
+.deco-4 { bottom: 45%; right: 120px; width: 120px; }
+.deco-5 { bottom: 25%; right: -20px; width: 140px; }
+.deco-6 { bottom: -3%; right: 15px;  width: 270px; }
 
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
+/* ======================
+   SECTIONS
+   ====================== */
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 80px 20px;
+}
 
-    /* HEADER */
-    header {
-      padding: 10px 20px;
-      text-align: center;
-    }
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
 
-    .logo {
-      width: 260px;
-    }
-    .deco {
-      position: fixed;
-      z-index: -1;
-      opacity: 0.70;
-    }
+.card.image-only {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .logo {
-      width: 280px;          /* tamaño del logo */
-      margin: 0 auto 20px;
-      display: block;
-    }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
 
-    .deco-1 {
-      bottom: 25%;
-      left: -60px;
-      width: 270px;
-    }
+.image-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+}
 
-    .deco-2 {
-      bottom: 20%;
-      left: 240px;
-      width: 120px;
-    }
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    
-    .deco-3 {
-      bottom: 1%;
-      left: -40px;
-      width: 350px;
-    }
+.image-wrapper h3 {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  margin: 0;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
 
-    
-    .deco-4 {
-      bottom: 45%;
-      right: 120px;
-      width: 120px;
-    }
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
 
-    .deco-5 {
-      bottom: 25%;
-      right: -20px;
-      width: 140px;
-    }
+/* ======================
+   MOBILE OVERRIDE
+   ====================== */
+@media (max-width: 768px) {
 
-    
-    .deco-6 {
-      bottom: -3%;
-      right: 15px;
-      width: 270px;
-    }
-    /* SECTIONS */
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 80px 20px;
-      scroll-margin-top: 90px; /* FIX FOR STICKY NAV */
-    }
+  .deco {
+    position: absolute;     /* 🔥 MOBILE FIX */
+    opacity: 0.35;
+    filter: blur(0.5px);
+  }
 
-    h2 {
-      margin-bottom: 20px;
-    }
+  .deco-1 { width: 140px; left: -40px; top: 12%; }
+  .deco-2 { width: 80px;  left: 55%;  top: 8%; }
+  .deco-3 { width: 180px; left: -60px; bottom: 8%; }
+  .deco-4 { width: 70px;  right: 12%; top: 30%; }
+  .deco-5 { width: 90px;  right: -30px; bottom: 28%; }
+  .deco-6 { width: 160px; right: -40px; bottom: -6%; }
+}
 
-    /* PROJECTS */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card.image-only {
-      padding: 0;
-      background: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .image-wrapper {
-      position: relative;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .image-wrapper h3 {
-      position: absolute;
-      bottom: 12px;
-      left: 12px;
-      margin: 0;
-      color: white;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
-      background-color: #111;
-      color: #888;
-    }
-    .project-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
- a:hover {
-      text-decoration: underline;
-    }
-  </style>
+/* VERY SMALL PHONES */
+@media (max-width: 480px) {
+  .deco-2,
+  .deco-4 {
+    display: none;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav class="navbar">
   <div class="nav-logo">VZ</div>
   <ul class="nav-menu">
-    <li><a href="#about">About</a></li>
-
-    <li class="dropdown">
-      <a href="#projects">Projects ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="#characters">Characters</a></li>
-        <li><a href="#games">Games</a></li>
-        <li><a href="#techart">Technical Art</a></li>
-      </ul>
-    </li>
-
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HEADER -->
 <header>
-  <img src="images/glow.png" alt="Logo" class="logo">
+  <img src="images/glow.png" class="logo">
 </header>
 
-<!-- PROJECTS -->
 <section id="projects">
-
-  <!-- Anchor targets -->
-  <div id="characters"></div>
-  <div id="games"></div>
-  <div id="techart"></div>
-
   <div class="projects">
-    <a href="pig-island.html" class="project-link">
+    <a href="#" class="project-link">
       <div class="card image-only">
         <div class="image-wrapper">
           <img src="images/pig_island.jpg">
@@ -255,61 +186,21 @@
         </div>
       </div>
     </a>
-
-    <a href="boonie.html" class="project-link">
-      <div class="card image-only">
-        <div class="image-wrapper">
-          <img src="images/boonie.png">
-          <h3>Boonie</h3>
-        </div>
-      </div>
-    </a>
-
-    <a href="luma.html" class="project-link">
-    <div class="card image-only">
-      <div class="image-wrapper">
-        <img src="images/Luma.png">
-        <h3>Luma</h3>
-      </div>
-    </div>
-    </a>
-    <div class="card image-only">
-      <div class="image-wrapper">
-        <img src="images/Maxxi.png">
-        <h3>Maxxi</h3>
-      </div>
-    </div>
-
-    <div class="card image-only">
-      <div class="image-wrapper">
-        <img src="images/yola.png">
-        <h3>Yola</h3>
-      </div>
-    </div>
-
-    <div class="card image-only">
-      <div class="image-wrapper">
-        <img src="images/croco.png">
-        <h3>Fruitstyle</h3>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
-  <p>
-    yourmail@email.com<br>
-    ArtStation · LinkedIn
-  </p>
+  <p>yourmail@email.com</p>
 </section>
 
+<!-- DECOR -->
 <img src="images/decor_01.png" class="deco deco-1">
 <img src="images/decor_02.png" class="deco deco-2">
 <img src="images/decor_03.png" class="deco deco-3">
 <img src="images/decor_04.png" class="deco deco-4">
 <img src="images/decor_05.png" class="deco deco-5">
 <img src="images/decor_06.png" class="deco deco-6">
+
 </body>
 </html>
