@@ -1,38 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Boonie | Valeria Zavaleta</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Valeria Zavaleta | Portfolio</title>
 
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    background: #FDFFF6;
-    color: #022A81;
-    margin: 0;
-    padding: 0;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  header {
-    padding: 10px 20px;
-    text-align: center;
-  }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fdfff6;
+  color: #022A81;
 
-  section {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-  }
+  position: relative;      /* 🔥 REQUIRED */
+  overflow-x: hidden;      /* 🔥 FIX MOBILE SCROLL */
+}
 
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px; 
+}
+
+.nav-logo {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a.active {
+  font-weight: bold;
+}
+
+.nav-menu a {
+  color: #022A81;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* HEADER */
+header {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 280px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.deco {
+  position: fixed;      /* desktop behavior */
+  z-index: -1;
+  opacity: 0.7;
+  pointer-events: none;
+  max-width: 100vw;
+}
+
+.deco-1 { bottom: 25%; left: -60px; width: 270px; }
+.deco-2 { bottom: 20%; left: 240px; width: 120px; }
+.deco-3 { bottom: 1%;  left: -40px; width: 350px; }
+.deco-4 { bottom: 45%; right: 120px; width: 120px; }
+.deco-5 { bottom: 25%; right: -20px; width: 140px; }
+.deco-6 { bottom: -3%; right: 15px;  width: 270px; }
+
+/* ======================
+   SECTIONS
+   ====================== */
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 10px 20px;
+}
   a {
     color: #022A81;
-    font-weight: bold;
+    font-weight: 500;
     text-decoration: none;
   }
 
-  .image-wrapper {
+h2 {
+  margin-bottom: 20px;
+}
+
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+  .card-section {
+    margin-bottom: 50px;
+  }
+
+  .card-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+ .image-wrapper {
     position: relative;
     width: 100%;
+    height: 100%;
     min-height: 500px;
     border-radius: 12px;
     overflow: hidden;
@@ -41,7 +128,7 @@
 
   .image-wrapper img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     position: absolute;
     top: 0;
@@ -54,7 +141,7 @@
   .image-wrapper img.image-2 { opacity: 0; z-index: 1; }
   .image-wrapper:hover img.image-1 { opacity: 0; }
   .image-wrapper:hover img.image-2 { opacity: 1; }
-
+  
   .container {
     display: flex;
     gap: 14px;
@@ -65,7 +152,7 @@
   .left, .right {
     flex: 1;
   }
-
+  
   .left img, .top-right img, .bottom-right img {
     width: 100%;
     height: auto;
@@ -116,10 +203,100 @@
     margin-bottom: 20px;
     line-height: 1.6;
   }
+ footer {
+      text-align: center;
+      padding: -40px;
+      color: #022A81;
+  }
+ 
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+ a:hover {
+      text-decoration: underline;
+    }
 
+.img-protect {
+  position: relative;
+  display: block;
+}
+
+.img-protect img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.img-protect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: auto;
+}
+.breadcrumb {
+  display: flex;
+  justify-content: center; /* optional */
+  gap: 24px;               /* space between links */
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #022A81;
+  font-weight: 500;
+
+  
+}
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+
+/* ======================
+   MOBILE OVERRIDE
+   ====================== */
+@media (max-width: 768px) {
+
+  .deco {
+    position: absolute;     /* 🔥 MOBILE FIX */
+    opacity: 0.35;
+    filter: blur(0.5px);
+    pointer-events: none;
+  }
+
+  .deco-1 { width: 140px; left: 0; top: 12%; }
+  .deco-2 { width: 80px;  left: 55%; top: 8%; }
+  .deco-3 { width: 180px; left: 0; bottom: 8%; }
+  .deco-4 { width: 70px;  right: 8%; top: 30%; }
+  .deco-5 { width: 90px;  right: 0; bottom: 28%; }
+  .deco-6 { width: 160px; right: 0; bottom: -6%; }
+}
+
+/* VERY SMALL PHONES */
+@media (max-width: 480px) {
+  .deco-2,
+  .deco-4 {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="nav-logo">VZ</div>
+  <ul class="nav-menu">
+    <li></li><a href="index.html" class="project-link">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contests">Contests</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
 <header>
   <h1>Boonie</h1>
@@ -170,3 +347,20 @@
       <p>Pig Island is a stylized character project focused on shape language, appealing silhouettes, and real-time optimization for games.</p>
       <p><strong>My role:</strong> Modeling, sculpting, texturing, and lookdev.<br>
       <strong>Tools:</strong> Blender,
+
+
+<!-- CONTACT -->
+<section id="contact">
+  
+  <footer class="contact">
+    <nav class="breadcrumb">
+      <a href="https://www.artstation.com/glowscale" target="_blank" rel="noopener">ArtStation</a>
+      <a href="https://www.linkedin.com/in/valeria-zavaleta" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/glowscale" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+</footer>
+</section>
+
+</script>
+</body>
+</html>

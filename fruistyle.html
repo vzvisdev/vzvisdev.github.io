@@ -86,7 +86,7 @@ header {
    SECTIONS
    ====================== */
 section {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 10px 20px;
 }
@@ -119,11 +119,10 @@ h2 {
  .image-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
     min-height: 500px;
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
 
   .image-wrapper img {
@@ -131,9 +130,9 @@ h2 {
     height: 100%;
     display: block;
     position: absolute;
+    object-fit: contain;
     top: 0;
     left: 0;
-    object-fit: cover;
     transition: opacity 0.5s ease;
   }
 
@@ -297,113 +296,76 @@ h2 {
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+
 <header>
-  <h1>Luma</h1>
-  <p>3D Character</p>
+  <h1>Fruitstyle</h1>
+  <p>Videogame</p>
 </header>
+
 
 <section>
   <div class="card">
-
+    <!-- Turning 2D Art into 3D -->
+    <div class="card-section">
+      <div class="image-wrapper">
+        <img src="images/fruitstyle_poster.png" alt="Pig Island Concept">
+      </div>
+      <div class="card-section">
+        <h3>Concept Art</h3>
+      <div class="image-wrapper">
+        <img src="images/croco_ca.png" alt="Pig Island Concept">
+      </div>
+        <div class="card-section">
+          <h3>UI Art</h3>
+      <div class="image-wrapper">
+        <img src="images/events.png" alt="Pig Island Concept">
+      </div>
+    <div class="card-section">
+      <div class="image-wrapper">
+        <img src="images/buttons.png" alt="Pig Island Concept">
+      </div>
+    <div class="card-section">
+      <div class="image-wrapper">
+        <img src="images/elements.png" alt="Pig Island Concept">
+      </div>
+      <div class="card-section">
+      <div class="image-wrapper">
+        <img src="images/combos.png" alt="Pig Island Concept">
+      </div>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/Gameplay.mp4" type="video/mp4">
+      </video>
     <!-- 3D Models Videos -->
     <div class="card-section">
-      <h3> Creating my own collectible doll</h3>
+     
+      <div class="card-section">
+      <div class="image-wrapper">
+         <h3>3D Models</h3>
+        <img src="images/croco_renders.png" alt="Pig Island Concept">
+      </div>
+      <h4> Character Preview in Unreal Engine</h4>
       <video class="media-video" autoplay loop muted>
-        <source src="videos/closeup.mp4" type="video/mp4">
+        <source src="videos/Animation.mp4" type="video/mp4">
+      </video>
+      <h3>3D Models: The Redesign</h3>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/croco.mp4" type="video/mp4">
+      </video>
+      <video class="media-video" autoplay loop muted>
+        <source src="videos/skate.mp4" type="video/mp4">
       </video>
     </div>
-
-    <!-- Shaders and Textures -->
     <div class="card-section">
-      <h3>Character 3D Model</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/model.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <!-- Shaders and Textures -->
-    <div class="card-section">
-      <h3>Shaders and Textures</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/shade.mp4" type="video/mp4">
-      </video>
-    </div>
-
-<!-- Line Art -->
-    <div class="card-section">
-      <h3>Line Art</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/line.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <!--  -->
-    <div class="card-section">
-      <h3>Rig and Skin</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/rig.mp4" type="video/mp4">
-      </video>
-    </div>
-
-     <!--  -->
-    <div class="card-section">
-      <h3>Compositing</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/compositing.mp4" type="video/mp4">
-      </video>
-    </div>
-
-       <!--  -->
-    <div class="card-section">
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/luma.mp4" type="video/mp4">
-      </video>
-    </div>
-
-         <!--  -->
-    <div class="card-section">
-      <h3>Prop</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/bass.mp4" type="video/mp4">
-      </video>
-    </div>
-        <!--  -->
-    <div class="card-section">
-      <h3>Prop Shaders </h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/shaders.mp4" type="video/mp4">
-      </video>
-      <img src="images/sticker0.png" alt="Pig Island concept art" width="700" class="center-img">
-
-       <video class="media-video" autoplay loop muted>
-        <source src="videos/Stickers.mp4" type="video/mp4">
-      </video>
-    </div>
-    <!--  -->
-    <div class="card-section">
-      <h3>Lineart</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/Lineartt.mp4" type="video/mp4">
-      </video>
-    </div>
-       <!--  -->
-    <div class="card-section">
-      <h3>Compositing</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/sparkle.mp4" type="video/mp4">
-      </video>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/bassf.mp4" type="video/mp4">
-      </video>
-    </div>
-
+          <h3>Illustration on Skateboard</h3>
+          <div class="image-wrapper">
+            <img src="images/Skate_Ill.png" alt="Pig Island Concept">
+          </div>
 
     <!-- Text Description -->
     <div class="card-section">
       <p>Pig Island is a stylized character project focused on shape language, appealing silhouettes, and real-time optimization for games.</p>
       <p><strong>My role:</strong> Modeling, sculpting, texturing, and lookdev.<br>
       <strong>Tools:</strong> Blender,
-
 
 <!-- CONTACT -->
 <section id="contact">

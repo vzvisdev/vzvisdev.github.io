@@ -86,7 +86,7 @@ header {
    SECTIONS
    ====================== */
 section {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   padding: 10px 20px;
 }
@@ -275,6 +275,40 @@ h2 {
   .deco-5 { width: 90px;  right: 0; bottom: 28%; }
   .deco-6 { width: 160px; right: 0; bottom: -6%; }
 }
+.about {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image img {
+  width: 500px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.about-text {
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
 
 /* VERY SMALL PHONES */
 @media (max-width: 480px) {
@@ -292,118 +326,34 @@ h2 {
   <div class="nav-logo">VZ</div>
   <ul class="nav-menu">
     <li></li><a href="index.html" class="project-link">Projects</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#about" class="active">About</a></li>
     <li><a href="#contests">Contests</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-<header>
-  <h1>Luma</h1>
-  <p>3D Character</p>
-</header>
-
-<section>
-  <div class="card">
-
-    <!-- 3D Models Videos -->
-    <div class="card-section">
-      <h3> Creating my own collectible doll</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/closeup.mp4" type="video/mp4">
-      </video>
+<section id="about" class="about">
+  
+  <div class="about-container">
+    
+    <div class="about-image">
+      <img src="images/pp.png" alt="Valeria Zavaleta">
     </div>
 
-    <!-- Shaders and Textures -->
-    <div class="card-section">
-      <h3>Character 3D Model</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/model.mp4" type="video/mp4">
-      </video>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Valeria Zavaleta holds a bachelor’s degree in Digital Animation Engineering. 
+        Her work focuses on visual and technical production for video games and animation. 
+        She is recognized for combining art, technology and innovation in her projects. 
+      </p>
+      <p>
+        She has participated in international congresses and forums, including the Central American Women in Gaming Forum and MWC 2025. 
+        She is an active mentor in STEM and creative fields and was selected by the European Union to represent Salvadoran youth in technology and digitalization through the Of the Future program in 2025.
+      </p>
     </div>
 
-    <!-- Shaders and Textures -->
-    <div class="card-section">
-      <h3>Shaders and Textures</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/shade.mp4" type="video/mp4">
-      </video>
-    </div>
-
-<!-- Line Art -->
-    <div class="card-section">
-      <h3>Line Art</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/line.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <!--  -->
-    <div class="card-section">
-      <h3>Rig and Skin</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/rig.mp4" type="video/mp4">
-      </video>
-    </div>
-
-     <!--  -->
-    <div class="card-section">
-      <h3>Compositing</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/compositing.mp4" type="video/mp4">
-      </video>
-    </div>
-
-       <!--  -->
-    <div class="card-section">
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/luma.mp4" type="video/mp4">
-      </video>
-    </div>
-
-         <!--  -->
-    <div class="card-section">
-      <h3>Prop</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/bass.mp4" type="video/mp4">
-      </video>
-    </div>
-        <!--  -->
-    <div class="card-section">
-      <h3>Prop Shaders </h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/shaders.mp4" type="video/mp4">
-      </video>
-      <img src="images/sticker0.png" alt="Pig Island concept art" width="700" class="center-img">
-
-       <video class="media-video" autoplay loop muted>
-        <source src="videos/Stickers.mp4" type="video/mp4">
-      </video>
-    </div>
-    <!--  -->
-    <div class="card-section">
-      <h3>Lineart</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/Lineartt.mp4" type="video/mp4">
-      </video>
-    </div>
-       <!--  -->
-    <div class="card-section">
-      <h3>Compositing</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/sparkle.mp4" type="video/mp4">
-      </video>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/bassf.mp4" type="video/mp4">
-      </video>
-    </div>
-
-
-    <!-- Text Description -->
-    <div class="card-section">
-      <p>Pig Island is a stylized character project focused on shape language, appealing silhouettes, and real-time optimization for games.</p>
-      <p><strong>My role:</strong> Modeling, sculpting, texturing, and lookdev.<br>
-      <strong>Tools:</strong> Blender,
-
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -418,5 +368,14 @@ h2 {
 </section>
 
 </script>
+<img src="images/decor_01.png" class="deco deco-1">
+<img src="images/decor_02.png" class="deco deco-2">
+<img src="images/decor_03.png" class="deco deco-3">
+<img src="images/decor_04.png" class="deco deco-4">
+<img src="images/decor_05.png" class="deco deco-5">
+<img src="images/decor_06.png" class="deco deco-6">
+</body>
+</html>
+
 </body>
 </html>

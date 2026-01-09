@@ -119,16 +119,15 @@ h2 {
  .image-wrapper {
     position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 500px;
-    border-radius: 12px;
+    min-height: 350px;
+    border-radius: 1px;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 1px;
   }
 
   .image-wrapper img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
     position: absolute;
     top: 0;
@@ -136,7 +135,9 @@ h2 {
     object-fit: cover;
     transition: opacity 0.5s ease;
   }
-
+.image-wrapper.swap {
+  min-height: 500px;
+}
   .image-wrapper img.image-1 { opacity: 1; z-index: 2; }
   .image-wrapper img.image-2 { opacity: 0; z-index: 1; }
   .image-wrapper:hover img.image-1 { opacity: 0; }
@@ -203,6 +204,34 @@ h2 {
     margin-bottom: 20px;
     line-height: 1.6;
   }
+  
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px; /* space at the top */
+  margin-bottom: 15px; /* space at the top */
+
+}
+.image-row2 {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 5px; /* space at the top */
+  margin-bottom: 15px; /* space at the top */
+
+}
+.image-row img {
+  max-width: 100%;
+  height: auto;
+}
+.image-row2 img {
+  max-width: 100%;
+  height: auto;
+}
+
  footer {
       text-align: center;
       padding: -40px;
@@ -297,105 +326,74 @@ h2 {
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+
 <header>
-  <h1>Luma</h1>
-  <p>3D Character</p>
+  <h1>Yola</h1>
+  <p>2D Animated Shortfilm</p>
 </header>
 
 <section>
   <div class="card">
 
-    <!-- 3D Models Videos -->
+    <!-- Turning 2D Art into 3D -->
     <div class="card-section">
-      <h3> Creating my own collectible doll</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/closeup.mp4" type="video/mp4">
-      </video>
-    </div>
+      <h3>Environment and Prop Design</h3>
+      <h3>Indoors</h3>
+      <div class="image-wrapper swap">
+        <img src="images/indoor_00.png" alt="Pig Island Concept" class="image-1">
+        <img src="images/indoor_01.png" alt="Pig Island 3D" class="image-2">
+      </div>
+      <div class="image-row">
+        <img src="images/still09.PNG" alt="Normal Map 1">
+        <img src="images/still02.PNG" alt="Normal Map 2">
+      </div>
 
-    <!-- Shaders and Textures -->
-    <div class="card-section">
-      <h3>Character 3D Model</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/model.mp4" type="video/mp4">
-      </video>
-    </div>
 
-    <!-- Shaders and Textures -->
-    <div class="card-section">
-      <h3>Shaders and Textures</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/shade.mp4" type="video/mp4">
-      </video>
-    </div>
 
-<!-- Line Art -->
+       <!-- Shaders and Textures -->
     <div class="card-section">
-      <h3>Line Art</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/line.mp4" type="video/mp4">
-      </video>
-    </div>
+      <h3>Outdoors</h3>
+      <div class="image-grid">
+        <img src="images/sky_01.png" alt="Normal Map 1">
+        <img src="images/sky_04.png" alt="Normal Map 2">
+        <img src="images/sky_03.png" alt="Base Color">
+      </div>
+      <div class="image-wrapper">
+       <img src="images/sky_02.png"  alt="Maxxi">
+      </div>
+      <div class="image-row2">
+        <img src="images/still10.PNG" alt="Normal Map 1">
+        <img src="images/still03.PNG" alt="Normal Map 2">
+        <img src="images/still06.PNG" alt="Normal Map 2">
+      </div>
 
-    <!--  -->
-    <div class="card-section">
-      <h3>Rig and Skin</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/rig.mp4" type="video/mp4">
-      </video>
+      <div class="container">
+        <div class="left">
+          <img src="images/outdoor_00.png" alt="Left Image">
+        </div>
+        <div class="right">
+          <div class="top-right">
+            <img src="images/asset_03.png" alt="Top Right Image">
+          </div>
+          <div class="bottom-right">
+            <img src="images/asset_01.png"  alt="Bottom Right Image">
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="image-row">
+        <img src="images/still01.PNG" alt="Normal Map 1">
+        <img src="images/still04.PNG" alt="Normal Map 2">
+      </div>
+    <div class="image-wrapper">
+       <img src="images/asset_02.png"  alt="">
+      </div>
 
-     <!--  -->
-    <div class="card-section">
-      <h3>Compositing</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/compositing.mp4" type="video/mp4">
-      </video>
-    </div>
-
-       <!--  -->
-    <div class="card-section">
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/luma.mp4" type="video/mp4">
-      </video>
-    </div>
-
-         <!--  -->
-    <div class="card-section">
-      <h3>Prop</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/bass.mp4" type="video/mp4">
-      </video>
-    </div>
-        <!--  -->
-    <div class="card-section">
-      <h3>Prop Shaders </h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/shaders.mp4" type="video/mp4">
-      </video>
-      <img src="images/sticker0.png" alt="Pig Island concept art" width="700" class="center-img">
-
-       <video class="media-video" autoplay loop muted>
-        <source src="videos/Stickers.mp4" type="video/mp4">
-      </video>
-    </div>
-    <!--  -->
-    <div class="card-section">
-      <h3>Lineart</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/Lineartt.mp4" type="video/mp4">
-      </video>
-    </div>
-       <!--  -->
-    <div class="card-section">
-      <h3>Compositing</h3>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/sparkle.mp4" type="video/mp4">
-      </video>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/bassf.mp4" type="video/mp4">
-      </video>
-    </div>
+  <script>
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("contextmenu", e => e.preventDefault());
+  });
+</script>
 
 
     <!-- Text Description -->
@@ -403,7 +401,6 @@ h2 {
       <p>Pig Island is a stylized character project focused on shape language, appealing silhouettes, and real-time optimization for games.</p>
       <p><strong>My role:</strong> Modeling, sculpting, texturing, and lookdev.<br>
       <strong>Tools:</strong> Blender,
-
 
 <!-- CONTACT -->
 <section id="contact">

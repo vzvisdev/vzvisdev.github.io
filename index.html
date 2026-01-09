@@ -28,8 +28,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background-color: rgba(15, 15, 15, 0.9);
+  padding: 15px 40px; 
 }
 
 .nav-logo {
@@ -46,51 +45,15 @@ body {
   padding: 0;
 }
 
+.nav-menu a.active {
+  font-weight: bold;
+}
+
 .nav-menu a {
-  color: white;
+  color: #022A81;
   text-decoration: none;
+  font-size: 15px;
 }
-
-.nav-menu a:hover {
-      color: #7dd3fc;
-}
-
-
-    /* DROPDOWN */
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-menu {
-      position: absolute;
-      top: 120%;
-      left: 0;
-      background-color: #1a1a1a;
-      list-style: none;
-      padding: 10px 0;
-      display: none;
-      min-width: 160px;
-      border-radius: 8px;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 16px;
-      color: white;
-    }
-
-    .dropdown-menu a:hover {
-      background-color: #2a2a2a;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
 
 /* HEADER */
 header {
@@ -104,9 +67,6 @@ header {
   display: block;
 }
 
-/* ======================
-   DECOR — DESKTOP
-   ====================== */
 .deco {
   position: fixed;      /* desktop behavior */
   z-index: -1;
@@ -130,11 +90,16 @@ section {
   margin: auto;
   padding: 80px 20px;
 }
-
+  a {
+    color: #022A81;
+    font-weight: 500;
+    text-decoration: none;
+  }
 
 h2 {
   margin-bottom: 20px;
 }
+
 /* PROJECT GRID */
 .projects {
   display: grid;
@@ -175,9 +140,8 @@ h2 {
 
  footer {
       text-align: center;
-      padding: 40px;
-      background-color: #111;
-      color: #888;
+      padding: -40px;
+      color: #022A81;
   }
  
 .project-link {
@@ -209,6 +173,23 @@ h2 {
   background: transparent;
   pointer-events: auto;
 }
+.breadcrumb {
+  display: flex;
+  justify-content: center; /* optional */
+  gap: 24px;               /* space between links */
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #022A81;
+  font-weight: 500;
+  
+}
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+
 /* ======================
    MOBILE OVERRIDE
    ====================== */
@@ -246,17 +227,9 @@ h2 {
 <nav class="navbar">
   <div class="nav-logo">VZ</div>
   <ul class="nav-menu">
-    <li><a href="#about">About</a></li>
-
-    <li class="dropdown">
-      <a href="#projects">Projects ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="#characters">Characters</a></li>
-        <li><a href="#games">Games</a></li>
-        <li><a href="#techart">Technical Art</a></li>
-      </ul>
-    </li>
-
+    <li><a href="#projects" class="active">Projects</a></li>
+    <li><a href="about.html" class="project-link">About</a></li>
+    <li><a href="#contests">Contests</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -275,7 +248,7 @@ h2 {
   <div id="techart"></div>
 
   <div class="projects">
-    <a href="pig-island.html" class="project-link">
+    <a href="island.html" class="project-link">
       <div class="card image-only">
         <div class="image-wrapper">
           <img src="images/pig_island.jpg">
@@ -301,7 +274,7 @@ h2 {
       </div>
     </div>
     </a>
-    <a href="yola.html" class="project-link">
+    <a href="maxxi.html" class="project-link">
     <div class="card image-only">
       <div class="image-wrapper">
         <img src="images/Maxxi.png">
@@ -317,6 +290,7 @@ h2 {
       </div>
     </div>
     </a>
+    <a href="fruistyle.html" class="project-link">
     <div class="card image-only">
       <div class="image-wrapper">
         <img src="images/croco.png">
@@ -328,11 +302,15 @@ h2 {
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
-  <p>
-    vzvisdev@email.com<br>
-    ArtStation · LinkedIn
-  </p>
+  
+  <footer class="contact">
+    <nav class="breadcrumb">
+      <a href="https://www.artstation.com/glowscale" target="_blank" rel="noopener">ArtStation</a>
+      <a href="https://www.linkedin.com/in/valeria-zavaleta" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/glowscale" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+</footer>
+
 </section>
 <script>
   document.querySelectorAll("img").forEach(img => {
