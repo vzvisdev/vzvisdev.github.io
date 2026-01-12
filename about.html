@@ -53,6 +53,7 @@ body {
   color: #022A81;
   text-decoration: none;
   font-size: 15px;
+  
 }
 
 /* HEADER */
@@ -114,90 +115,20 @@ h2 {
 
   .card-section h3 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    margin-top: 0 px;
   }
- .image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
+.image-wrappersmall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    transition: opacity 0.5s ease;
-  }
+.image-wrappersmall img {
+  width: 400px;
+  max-width: 100%;
+}
 
-  .image-wrapper img.image-1 { opacity: 1; z-index: 2; }
-  .image-wrapper img.image-2 { opacity: 0; z-index: 1; }
-  .image-wrapper:hover img.image-1 { opacity: 0; }
-  .image-wrapper:hover img.image-2 { opacity: 1; }
-  
-  .container {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    margin-bottom: 40px;
-  }
-
-  .left, .right {
-    flex: 1;
-  }
-  
-  .left img, .top-right img, .bottom-right img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-  }
-
-  .right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .bottom-right img {
-    margin-top: 5px; /* optional visual adjustment */
-  }
-
-  .card-section {
-    margin-bottom: 50px;
-  }
-
-  .card-section h3 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .media-video {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
-
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .image-grid img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-  }
 
   p {
     margin-bottom: 20px;
@@ -255,6 +186,18 @@ h2 {
     text-decoration: underline;
   }
 
+.image-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  color: #022A81;
+  text-align: justify;
+  font-size: 16px;
+  
+
+}
 
 /* ======================
    MOBILE OVERRIDE
@@ -277,7 +220,7 @@ h2 {
 }
 .about {
   max-width: 1000px;
-  margin: 100px auto;
+  margin:  auto;
   padding: 0 20px;
 }
 
@@ -299,7 +242,7 @@ h2 {
 }
 
 .about-text h2 {
-  font-size: 2rem;
+    font-size: 2-rem;
   margin-bottom: 16px;
 }
 
@@ -317,6 +260,27 @@ h2 {
     display: none;
   }
 }
+
+
+ .image-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0px;
+  }
+
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+  }
 </style>
 </head>
 <body>
@@ -327,8 +291,6 @@ h2 {
   <ul class="nav-menu">
     <li></li><a href="index.html" class="project-link">Projects</a></li>
     <li><a href="#about" class="active">About</a></li>
-    <li><a href="#contests">Contests</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 <section id="about" class="about">
@@ -351,9 +313,31 @@ h2 {
         She is an active mentor in STEM and creative fields and was selected by the European Union to represent Salvadoran youth in technology and digitalization through the Of the Future program in 2025.
       </p>
     </div>
-
   </div>
+   <div class="card-section">
+      <div class="image-wrappersmall">
+        <img src="images/2025.png" alt="Pig Island Concept">
+      </div>
+      <div class="card-section">
+      <div class="image-wrapper">
+        <img src="images/OTF.png" alt="Pig Island Concept">
+        <div class="image-text"><a href="https://www.vox.com/ad/461213/leading-the-way-for-el-salvadors-digital-future" target="_blank" rel="noopener">Was selected by the European Union to represent El Salvador's youth in technology and digitalization in the Of The Future documentary series</a></div>
+      </div>
+      <div class="card-section">
+      <div class="image-wrapper">
+        <img src="images/mm.png" alt="Pig Island Concept">
+        <div class="image-text"> Joined Red de Mentoras, the mentor network of Muchas Mas foundation</div>
+      </div>
+       <div class="card-section">
+      <div class="image-wrapper">
+        <img src="images/XOLO.png" alt="Pig Island Concept">
+        <div class="image-text"><a href="https://www.laprensagrafica.com/farandula/La-Art-Toy-Con-El-Salvador-se-vivio-a-lo-grande-en-el-Museo-Marte-20250804-0077.html" target="_blank" rel="noopener">Participated in art contests and calls, including the Xolo Custom Show at Art Toy Con El Salvador</a></div>
+      </div>
+      
+      
+      
 </section>
+
 
 <!-- CONTACT -->
 <section id="contact">

@@ -192,6 +192,11 @@ h2 {
     margin-bottom: 20px;
   }
 
+  .image-grid figure {
+    margin: 0;
+    text-align: center;
+  }
+
   .image-grid img {
     width: 100%;
     height: auto;
@@ -283,6 +288,23 @@ h2 {
     display: none;
   }
 }
+.about {
+  margin: 0 auto;
+}
+
+.about p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+.project-text {
+  max-width: 100%;
+  margin: 20px auto 40px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
 </style>
 </head>
 <body>
@@ -292,9 +314,7 @@ h2 {
   <div class="nav-logo">VZ</div>
   <ul class="nav-menu">
     <li></li><a href="index.html" class="project-link">Projects</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contests">Contests</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="about.html" class="project-link">About</a></li>
   </ul>
 </nav>
 
@@ -303,6 +323,12 @@ h2 {
   <p>3D Diorama</p>
 </header>
 
+<section class="about">
+  <p>
+    Pig Island is a project that aims to portrait a glimpse of a universe in which my beloved dog lives after passing away. 
+    In is world, Mostrololo enjoys the tranquility of warm breeze surrounded by palm trees, while a couple of guardians protect him.
+  </p>
+</section>
 
 <section>
   <div class="card">
@@ -313,7 +339,13 @@ h2 {
         <img src="pig-island/concept.png" alt="Pig Island Concept" class="image-1">
         <img src="pig-island/3d.png" alt="Pig Island 3D" class="image-2">
       </div>
+<section class="about">
+  <p>
+    Developed a 2D concept art that supported the creation of a 3D environment using Blender.
+    The rounded shape language and the visual development based on painterly textures and detailed lineart aim to create a friendly environment where every spot looks like a little painting. 
+  </p>
 
+</section>
       <div class="container">
         <div class="left">
           <img src="pig-island/3.png" alt="Left Image">
@@ -341,12 +373,31 @@ h2 {
     </div>
 
     <!-- Shaders and Textures -->
+
+       <section>
     <div class="card-section">
       <h3>Shaders and Textures</h3>
       <div class="image-grid">
-        <img src="pig-island/normal1.png" alt="Normal Map 1">
-        <img src="pig-island/normal2.png" alt="Normal Map 2">
-        <img src="pig-island/bc.png" alt="Base Color">
+        <figure>
+          <img src="pig-island/normal1.png" alt="Normal Map 1">
+          <figcaption>Normal Map</figcaption>
+        </figure>
+        <figure>
+          <img src="pig-island/normal2.png" alt="Normal Map 2">
+          <figcaption>Painted Normal Map</figcaption>
+         </figure>
+       <figure>
+          <img src="pig-island/bc.png" alt="Base Color">
+          <figcaption>Diffuse Map</figcaption>
+       </figure>
+       </section>
+  <section class="about">
+  <p>
+    To achieve the painterly look, applied a technique that consisted on painting over the Normal Map using an impresionistic brushwork. This approaches changes the appeareance of objects, creating the illusion that 
+  each brushtroke is a distinct facet of the model's geometry  </p>
+
+</section>
+
       </div>
       <video class="media-video" autoplay loop muted>
         <source src="videos/shading.mp4" type="video/mp4">
@@ -358,12 +409,27 @@ h2 {
 
 
       <div class="image-grid">
-        <img src="images/normal.png" alt="Normal">
-        <img src="images/shaded.png" alt="Shaded">
-        <img src="images/pig_island.jpg" alt="Pig Island">
+        <figure>
+          <img src="images/normal.png" alt="Normal">
+          <figcaption>Normal Map Pass</figcaption>
+        </figure>
+        <figure>
+          <img src="images/shaded.png" alt="Shaded">
+          <figcaption>Combined Pass</figcaption>
+        </figure>
+        <figure>
+          <img src="images/pig_island.png" alt="Pig Island">
+          <figcaption>Combined Pass with lineart</figcaption>
+        </figure>
+        
       </div>
     </div>
+  <section class="about">
+  <p>
+    Making lineart was the more fun part of the visual development process, using one of my favorite features in Blender: grease pencil. During this stage, I painted strokes directly on the 3D models specially to define edges like I would do with a 2D illustration to break symmetry and add organic details
+  </p>
 
+</section>
     
       <video class="media-video" autoplay loop muted>
         <source src="videos/lineart.mp4" type="video/mp4">
@@ -376,6 +442,12 @@ h2 {
       <video class="media-video" autoplay loop muted>
         <source src="videos/anim.mp4" type="video/mp4">
       </video>
+      <section class="about">
+        <p>
+          As a final touch animated the lineart which creates a more lively scene. The purpose behind the animation was to bring 2D feature like lineart into the dynamic space of a 3D enviroment. In my work I consistently seek to explore and integrate different techniques that interest me. 
+
+      </section>
+    
       <video class="media-video" autoplay loop muted>
         <source src="videos/videoconcept.mp4" type="video/mp4">
       </video>

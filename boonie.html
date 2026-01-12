@@ -275,7 +275,15 @@ h2 {
   .deco-5 { width: 90px;  right: 0; bottom: 28%; }
   .deco-6 { width: 160px; right: 0; bottom: -6%; }
 }
+.about {
+  margin: 0 auto;
+}
 
+.about p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
 /* VERY SMALL PHONES */
 @media (max-width: 480px) {
   .deco-2,
@@ -292,9 +300,7 @@ h2 {
   <div class="nav-logo">VZ</div>
   <ul class="nav-menu">
     <li></li><a href="index.html" class="project-link">Projects</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contests">Contests</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="about.html" class="project-link">About</a></li>
   </ul>
 </nav>
 
@@ -302,6 +308,11 @@ h2 {
   <h1>Boonie</h1>
   <p>3D Character</p>
 </header>
+<section class="about">
+  <p>
+    Boonie is a character with a fluffy personality. He used to be the target of jokes because of his long arms and legs but over time found that this has given him a flexiblity skill. Now, he uses it to defeat the taller monsters in town at sports. 
+  </p>
+</section>
 
 <section>
   <div class="card">
@@ -320,6 +331,11 @@ h2 {
        <video class="media-video" autoplay loop muted>
         <source src="videos/hair.mp4" type="video/mp4">
       </video>
+    <section class="about">
+  <p>
+    Developed fur system using geometry nodes, groomed hair particles and linked them to a handpainted texture to add color variation. 
+  </p>
+</section>
 
 <!-- Line Art -->
     <div class="card-section">
@@ -327,9 +343,13 @@ h2 {
        <video class="media-video" autoplay loop muted>
         <source src="videos/shader.mp4" type="video/mp4">
       </video>
+      <section class="about">
+        <p>
+          I wanted to achieve the look of bubble eyes through a procedural material to create a glittery iris encapsulated by a crystal clear layer
+        </p>
+      </section>
       </div>
-    </div>
-    </div>
+
 
     <!-- Animation -->
     <div class="card-section">
@@ -337,6 +357,12 @@ h2 {
       <video class="media-video" autoplay loop muted>
         <source src="videos/shapekeys.mp4" type="video/mp4">
       </video>
+       <section class="about">
+        <p>
+          Defined different variations of eyelids and mouth to build new expressions through shapekeys 
+        </p>
+      </section>
+
       <video class="media-video" autoplay loop muted>
         <source src="videos/expressions.mp4" type="video/mp4">
       </video>
