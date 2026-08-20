@@ -202,6 +202,7 @@
       cursor: pointer;
       opacity: 0.4;
       transition: opacity 0.4s ease, border-color 0.4s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .showcase-item.active {
@@ -439,8 +440,8 @@
           <!-- Frame 2: Single Image -->
           <div class="showcase-media-frame" id="media-2">
             <img src="images/mentor.jpeg" alt="Red de Mentoras" class="slide-active">
-            <img src="images/mentor_01.jpeg" alt="Red de Mentoras" class="slide-active">
-            <img src="images/mentor_02.jpeg" alt="Red de Mentoras" class="slide-active">
+            <img src="images/mentor_01.jpeg" alt="Red de Mentoras">
+            <img src="images/mentor_02.jpeg" alt="Red de Mentoras">
           </div>
           
           <!-- Frame 3: Slideshow with 3 Images -->
@@ -495,25 +496,33 @@
         images[currentIndex].classList.remove('slide-active');
         currentIndex = (currentIndex + 1) % images.length;
         images[currentIndex].classList.add('slide-active');
-      }, 1000); /* Speed: 2.5 seconds per slide */
+      }, 1000);
+    }
+
+    function activateItem(item) {
+      const targetId = item.getAttribute('data-target');
+      const targetFrame = document.getElementById(targetId);
+
+      if (!targetFrame) return;
+
+      showcaseItems.forEach(el => el.classList.remove('active'));
+      mediaFrames.forEach(frame => frame.classList.remove('active'));
+
+      item.classList.add('active');
+      targetFrame.classList.add('active');
+
+      startSlideshow(targetFrame);
     }
 
     showcaseItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        const targetId = item.getAttribute('data-target');
-        const targetFrame = document.getElementById(targetId);
+      item.addEventListener('mouseenter', () => activateItem(item));
 
-        showcaseItems.forEach(el => el.classList.remove('active'));
-        mediaFrames.forEach(frame => frame.classList.remove('active'));
-
-        item.classList.add('active');
-        targetFrame.classList.add('active');
-
-        startSlideshow(targetFrame);
+      item.addEventListener('click', (e) => {
+        if (e.target.tagName.toLowerCase() === 'a') return;
+        activateItem(item);
       });
     });
 
-    // Start slideshow for the initial active frame on page load
     const activeFrame = document.querySelector('.showcase-media-frame.active');
     if (activeFrame) {
       startSlideshow(activeFrame);
