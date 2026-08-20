@@ -1,470 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Valeria Zavaleta | Portfolio</title>
-
-<style>
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fdfff6;
-  color: #022A81;
-
-  position: relative;      /* 🔥 REQUIRED */
-  overflow-x: hidden;      /* 🔥 FIX MOBILE SCROLL */
-}
-
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px; 
-}
-
-.nav-logo {
-  color: white;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-menu a.active {
-  font-weight: bold;
-}
-
-.nav-menu a {
-  color: #022A81;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-/* HEADER */
-header {
-  padding: 10px 20px;
-  text-align: center;
-}
-
-.logo {
-  width: 280px;
-  margin: 0 auto 20px;
-  display: block;
-}
-
-.deco {
-  position: fixed;      /* desktop behavior */
-  z-index: -1;
-  opacity: 0.7;
-  pointer-events: none;
-  max-width: 100vw;
-}
-
-.deco-1 { bottom: 25%; left: -60px; width: 270px; }
-.deco-2 { bottom: 20%; left: 240px; width: 120px; }
-.deco-3 { bottom: 1%;  left: -40px; width: 350px; }
-.deco-4 { bottom: 45%; right: 120px; width: 120px; }
-.deco-5 { bottom: 25%; right: -20px; width: 140px; }
-.deco-6 { bottom: -3%; right: 15px;  width: 270px; }
-
-/* ======================
-   SECTIONS
-   ====================== */
-section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 10px 20px;
-}
-  a {
-    color: #022A81;
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-h2 {
-  margin-bottom: 20px;
-}
-
-/* PROJECT GRID */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-
-  .card-section {
-    margin-bottom: 50px;
-  }
-
-  .card-section h3 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
- .image-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 500px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-
-  .image-wrapper img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    transition: opacity 0.5s ease;
-  }
-
-  .image-wrapper img.image-1 { opacity: 1; z-index: 2; }
-  .image-wrapper img.image-2 { opacity: 0; z-index: 1; }
-  .image-wrapper:hover img.image-1 { opacity: 0; }
-  .image-wrapper:hover img.image-2 { opacity: 1; }
-  
-  .container {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    margin-bottom: 40px;
-  }
-
-  .left, .right {
-    flex: 1;
-  }
-  
-  .left img, .top-right img, .bottom-right img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-  }
-
-  .right {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .bottom-right img {
-    margin-top: 5px; /* optional visual adjustment */
-  }
-
-  .card-section {
-    margin-bottom: 50px;
-  }
-
-  .card-section h3 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .media-video {
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
-
-  .image-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .image-grid figure {
-    margin: 0;
-    text-align: center;
-  }
-
-  .image-grid img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-  }
-
-  p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
- footer {
-      text-align: center;
-      padding: -40px;
-      color: #022A81;
-  }
- 
-.project-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
- a:hover {
-      text-decoration: underline;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pig Island | Valeria Zavaleta</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     }
 
-.img-protect {
-  position: relative;
-  display: block;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.img-protect img {
-  display: block;
-  width: 100%;
-  height: auto;
-  -webkit-user-drag: none;
-  user-select: none;
-}
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      background-color: #fdfff6;
+      color: #333333;
+      position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
 
-.img-protect::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  pointer-events: auto;
-}
-.breadcrumb {
-  display: flex;
-  justify-content: center; /* optional */
-  gap: 24px;               /* space between links */
-}
+    /* --- HEADER --- */
+    .header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      background-color: #fdfff6;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-.breadcrumb a {
-  text-decoration: none;
-  color: #022A81;
-  font-weight: 500;
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
 
-  
-}
-  .breadcrumb a:hover {
-    text-decoration: underline;
-  }
+    .logo:hover {
+      opacity: 0.6;
+    }
 
+    .logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
 
-/* ======================
-   MOBILE OVERRIDE
-   ====================== */
-@media (max-width: 768px) {
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
 
-  .deco {
-    position: absolute;     /* 🔥 MOBILE FIX */
-    opacity: 0.35;
-    filter: blur(0.5px);
-    pointer-events: none;
-  }
+    .nav-links a {
+      color: #333333;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0.8px;
+      transition: opacity 0.3s ease;
+    }
 
-  .deco-1 { width: 140px; left: 0; top: 12%; }
-  .deco-2 { width: 80px;  left: 55%; top: 8%; }
-  .deco-3 { width: 180px; left: 0; bottom: 8%; }
-  .deco-4 { width: 70px;  right: 8%; top: 30%; }
-  .deco-5 { width: 90px;  right: 0; bottom: 28%; }
-  .deco-6 { width: 160px; right: 0; bottom: -6%; }
-}
+    .nav-links a:hover {
+      opacity: 0.5;
+    }
 
-/* VERY SMALL PHONES */
-@media (max-width: 480px) {
-  .deco-2,
-  .deco-4 {
-    display: none;
-  }
-}
-.about {
-  margin: 0 auto;
-}
+    /* --- PAGE INTRO / HEADER --- */
+    .page-intro {
+      width: 100%;
+      max-width: 1100px;
+      padding: 48px 32px 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.about p {
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-}
-.project-text {
-  max-width: 100%;
-  margin: 20px auto 40px;
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-}
+    .page-title {
+      color: #333333;
+      font-size: 1.15rem;
+      font-weight: 300;
+      letter-spacing: 0.8px;
+    }
 
-</style>
+    .back-link {
+      color: #bb4e8a;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 300;
+      letter-spacing: 0.8px;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-link:hover {
+      opacity: 0.5;
+    }
+
+    /* --- MAIN CONTENT CONTAINER --- */
+    .main-container {
+      width: 100%;
+      max-width: 1100px;
+      padding: 0 32px 100px 32px;
+    }
+
+    /* --- HERO MEDIA --- */
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      background-color: rgba(0, 0, 0, 0.02);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .hero-wrapper img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-wrapper img.image-1 { opacity: 1; z-index: 2; }
+    .hero-wrapper img.image-2 { opacity: 0; z-index: 1; }
+    .hero-wrapper:hover img.image-1 { opacity: 0; }
+    .hero-wrapper:hover img.image-2 { opacity: 1; }
+
+    /* --- OVERVIEW & METADATA GRID --- */
+    .project-overview-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 48px;
+      margin-bottom: 80px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .overview-text p {
+      font-size: 1rem;
+      line-height: 1.7;
+      font-weight: 300;
+      color: #444444;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #888888;
+      font-weight: 400;
+    }
+
+    .meta-value {
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      color: #333333;
+    }
+
+    /* --- EXHIBIT SECTIONS --- */
+    .exhibit-section {
+      margin-bottom: 90px;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.8px;
+      margin-bottom: 24px;
+      color: #333333;
+      text-transform: lowercase;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding-bottom: 8px;
+    }
+
+    .exhibit-text {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      font-weight: 300;
+      color: #555555;
+      margin: 20px 0 32px 0;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* --- MEDIA & GRIDS --- */
+    .media-video {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 24px;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .two-column-grid {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .two-column-grid .left, 
+    .two-column-grid .right {
+      flex: 1;
+    }
+
+    .two-column-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .two-column-grid .right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .image-grid figure {
+      margin: 0;
+    }
+
+    .image-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      margin-bottom: 8px;
+    }
+
+    figcaption {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: #777777;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    
+    /* --- FOOTER --- */
+    .footer {
+      width: 100%;
+      padding: 40px 32px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      background-color: #fdfff6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #333333;
+      transition: opacity 0.3s ease;
+    }
+
+    .social-link:hover {
+      opacity: 0.5;
+    }
+
+    .social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .copyright {
+      font-size: 0.8rem;
+      color: #999999;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 850px) {
+      .project-overview-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .page-intro, .main-container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="navbar">
-  <div class="nav-logo">VZ</div>
-  <ul class="nav-menu">
-    <li></li><a href="index.html" class="project-link">Projects</a></li>
-    <li><a href="about.html" class="project-link">About</a></li>
-  </ul>
-</nav>
+  <!-- HEADER -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="about.html">about me</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-  <h1>Pig Island</h1>
-  <p>3D Diorama</p>
-</header>
+  <!-- PAGE INTRO -->
+  <div class="page-intro">
+    <h1 class="page-title">pig island</h1>
+    <a href="index.html" class="back-link">&larr; back home</a>
+  </div>
 
-<section class="about">
-  <p>
-    Pig Island is a project that aims to portrait a glimpse of a universe in which my beloved dog lives after passing away. 
-    In is world, Mostrololo enjoys the tranquility of warm breeze surrounded by palm trees, while a couple of guardians protect him.
-  </p>
-</section>
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="main-container">
 
-<section>
-  <div class="card">
-    <!-- Turning 2D Art into 3D -->
-    <div class="card-section">
-      <h3>Turning 2D Art into 3D</h3>
-      <div class="image-wrapper">
-        <img src="pig-island/concept.png" alt="Pig Island Concept" class="image-1">
-        <img src="pig-island/3d.png" alt="Pig Island 3D" class="image-2">
+    <!-- HERO MEDIA ITEM (FIRST VISUAL SHOWCASE) -->
+    <div class="hero-wrapper">
+      <img src="pig-island/concept.png" alt="Pig Island Concept Art" class="image-1">
+      <img src="pig-island/3d.png" alt="Pig Island 3D Model Render" class="image-2">
+    </div>
+
+    <!-- OVERVIEW & METADATA BLOCK -->
+    <div class="project-overview-grid">
+      <div class="overview-text">
+        <p>
+          Pig Island portraits a glimpse of a universe in which my beloved dog lives after passing away. 
+          In is world, Mostrololo enjoys the tranquility of warm breeze surrounded by palm trees, protected by couple of guardians.
+          The look development consists on handpainted textures and line art that turn every camera angle into a small painting.
+        </p>
       </div>
-<section class="about">
-  <p>
-    Developed a 2D concept art that supported the creation of a 3D environment using Blender.
-    The rounded shape language and the visual development based on painterly textures and detailed lineart aim to create a friendly environment where every spot looks like a little painting. 
-  </p>
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="meta-label">Category</span>
+          <span class="meta-value">3D Diorama</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Tools</span>
+          <span class="meta-value">Blender</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">Concept Art, Modeling, LookDev & Animation</span>
+        </div>
+      </div>
+    </div>
 
-</section>
-      <div class="container">
+    <!-- SECTION 01: CONCEPT TO 3D DETAILS -->
+    <section class="exhibit-section">
+      <h2 class="section-title">01. visual development & detail</h2>
+      <p class="exhibit-text">
+        Developed a 2D concept art that helped to create the 3D environment in Blender. 
+        The rounded shape language and painterly shaders create a friendly and soft atmosphere.
+      </p>
+      <div class="two-column-grid">
         <div class="left">
-          <img src="pig-island/3.png" alt="Left Image">
+          <img src="pig-island/3.png" alt="Pig Island Detail Render 1">
         </div>
         <div class="right">
-          <div class="top-right">
-            <img src="pig-island/1.png" alt="Top Right Image">
-          </div>
-          <div class="bottom-right">
-            <img src="pig-island/2.png" alt="Bottom Right Image">
-          </div>
+          <img src="pig-island/1.png" alt="Pig Island Detail Render 2">
+          <img src="pig-island/2.png" alt="Pig Island Detail Render 3">
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- 3D Models Videos -->
-    <div class="card-section">
-      <h3>3D Models</h3>
-      <video class="media-video" autoplay loop muted>
+    <!-- SECTION 02: 3D MODELS -->
+    <section class="exhibit-section">
+      <h2 class="section-title">02. 3d models</h2>
+      <video class="media-video" autoplay loop muted playsinline>
         <source src="videos/wireframe.mp4" type="video/mp4">
       </video>
-      <video class="media-video" autoplay loop muted>
+      <video class="media-video" autoplay loop muted playsinline>
         <source src="videos/pigisland.mp4" type="video/mp4">
       </video>
-    </div>
+    </section>
 
-    <!-- Shaders and Textures -->
-
-       <section>
-    <div class="card-section">
-      <h3>Shaders and Textures</h3>
+    <!-- SECTION 03: SHADERS AND TEXTURES -->
+    <section class="exhibit-section">
+      <h2 class="section-title">03. shaders & textures</h2>
       <div class="image-grid">
         <figure>
-          <img src="pig-island/normal1.png" alt="Normal Map 1">
-          <figcaption>Normal Map</figcaption>
-        </figure>
-        <figure>
-          <img src="pig-island/normal2.png" alt="Normal Map 2">
-          <figcaption>Painted Normal Map</figcaption>
-         </figure>
-       <figure>
-          <img src="pig-island/bc.png" alt="Base Color">
-          <figcaption>Diffuse Map</figcaption>
-       </figure>
-       </section>
-  <section class="about">
-  <p>
-    To achieve the painterly look, applied a technique that consisted on painting over the Normal Map using an impresionistic brushwork. This approaches changes the appeareance of objects, creating the illusion that 
-  each brushtroke is a distinct facet of the model's geometry  </p>
-
-</section>
-
-      </div>
-      <video class="media-video" autoplay loop muted>
-        <source src="videos/shading.mp4" type="video/mp4">
-      </video>
-
-<!-- Line Art -->
-    <div class="card-section">
-      <h3>Line Art</h3>
-
-
-      <div class="image-grid">
-        <figure>
-          <img src="images/normal.png" alt="Normal">
+          <img src="pig-island/normal1.png" alt="Normal Map Pass">
           <figcaption>Normal Map Pass</figcaption>
         </figure>
         <figure>
-          <img src="images/shaded.png" alt="Shaded">
+          <img src="pig-island/normal2.png" alt="Painted Normal Map">
+          <figcaption>Painted Normal Map</figcaption>
+        </figure>
+        <figure>
+          <img src="pig-island/bc.png" alt="Diffuse Base Map">
+          <figcaption>Diffuse Map</figcaption>
+        </figure>
+      </div>
+
+      <p class="exhibit-text">
+        To achieve the painterly look, I applied a technique that consisted on painting over the Normal Map using an impresionistic brushwork. 
+        This approaches changes the appeareance of objects, creating the illusion that each brushtroke is a distinct facet of the model's geometry
+      </p>
+
+      <video class="media-video" autoplay loop muted playsinline>
+        <source src="videos/shading.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <!-- SECTION 04: LINE ART -->
+    <section class="exhibit-section">
+      <h2 class="section-title">04. line art</h2>
+      <div class="image-grid">
+        <figure>
+          <img src="images/normal.png" alt="Normal Map">
+          <figcaption>Normal Pass</figcaption>
+        </figure>
+        <figure>
+          <img src="images/shaded.png" alt="Combined Render">
           <figcaption>Combined Pass</figcaption>
         </figure>
         <figure>
-          <img src="images/pig_island.png" alt="Pig Island">
-          <figcaption>Combined Pass with lineart</figcaption>
+          <img src="images/pig_island.png" alt="Combined Render with Lineart">
+          <figcaption>Pass with Line Art</figcaption>
         </figure>
-        
       </div>
-    </div>
-  <section class="about">
-  <p>
-    Making lineart was the more fun part of the visual development process, using one of my favorite features in Blender: grease pencil. During this stage, I painted strokes directly on the 3D models specially to define edges like I would do with a 2D illustration to break symmetry and add organic details
-  </p>
 
-</section>
-    
-      <video class="media-video" autoplay loop muted>
+      <p class="exhibit-text">
+      Creating line art was the most fun part of the visual development process, using one of my favorite features in Blender: grease pencil. 
+      During this stage, I painted strokes directly on the 3D models specially to define edges like I would do with a 2D illustration to break 
+      symmetry and add organic details
+      </p>
+
+      <video class="media-video" autoplay loop muted playsinline>
         <source src="videos/lineart.mp4" type="video/mp4">
       </video>
-    </div>
+    </section>
 
-    <!-- Animation -->
-    <div class="card-section">
-      <h3>Animation</h3>
-      <video class="media-video" autoplay loop muted>
+    <!-- SECTION 05: ANIMATION -->
+    <section class="exhibit-section">
+      <h2 class="section-title">05. animation</h2>
+      <video class="media-video" autoplay loop muted playsinline>
         <source src="videos/anim.mp4" type="video/mp4">
       </video>
-      <section class="about">
-        <p>
-          As a final touch, animated the lineart which creates a more lively scene. The purpose behind the animation was to bring 2D feature like lineart into the dynamic space of a 3D enviroment. In my work I consistently seek to explore and integrate different techniques that interest me. 
 
-      </section>
-    
-      <video class="media-video" autoplay loop muted>
+      <p class="exhibit-text">
+        As a final touch, animated the lineart which creates a more lively scene. 
+        The purpose behind the animation was to bring 2D feature like lineart into the dynamic space of a 3D enviroment. 
+        In my work I consistently seek to explore and integrate different techniques that interest me.
+      </p>
+
+      <video class="media-video" autoplay loop muted playsinline>
         <source src="videos/videoconcept.mp4" type="video/mp4">
       </video>
-    </div>
+    </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  
-  <footer class="contact">
-    <nav class="breadcrumb">
-      <a href="https://www.artstation.com/glowscale" target="_blank" rel="noopener">ArtStation</a>
-      <a href="https://www.linkedin.com/in/valeria-zavaleta" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.instagram.com/glowscale" target="_blank" rel="noopener">Instagram</a>
-    </nav>
-</footer>
-</section>
+  </main>
 
-</script>
+ 
+
+  <footer class="footer">
+    <ul class="social-links">
+      <li>
+        <a href="https://www.instagram.com/glowscale" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/valeria-zavaleta" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+
 </body>
 </html>

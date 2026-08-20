@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yola | Valeria Zavaleta</title>
+  <title>Fruitstyle | Valeria Zavaleta</title>
   <style>
     * {
       box-sizing: border-box;
@@ -117,9 +117,8 @@
       padding: 0 32px 100px 32px;
     }
 
-    /* --- HERO MEDIA (INDOOR SWAP IMAGE) --- */
+    /* --- HERO MEDIA --- */
     .hero-wrapper {
-      position: relative;
       width: 100%;
       border-radius: 4px;
       overflow: hidden;
@@ -133,29 +132,6 @@
       height: auto;
       display: block;
       border-radius: 4px;
-      transition: opacity 0.5s ease;
-    }
-
-    .hero-wrapper img.image-1 {
-      opacity: 1;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-wrapper img.image-2 {
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-
-    .hero-wrapper:hover img.image-1 {
-      opacity: 0;
-    }
-
-    .hero-wrapper:hover img.image-2 {
-      opacity: 1;
     }
 
     /* --- OVERVIEW & METADATA GRID --- */
@@ -224,7 +200,7 @@
       font-size: 0.9rem;
       font-weight: 400;
       letter-spacing: 0.5px;
-      margin: 24px 0 16px 0;
+      margin: 24px 0 12px 0;
       color: #555555;
     }
 
@@ -238,7 +214,7 @@
       hyphens: auto;
     }
 
-    /* --- MEDIA & GRIDS --- */
+    /* --- MEDIA --- */
     .media-img {
       width: 100%;
       height: auto;
@@ -248,67 +224,13 @@
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     }
 
-    .image-row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-
-    .image-row img {
+    .media-video {
       width: 100%;
-      height: auto;
       border-radius: 4px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    }
-
-    .image-row2 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
       margin-bottom: 24px;
-    }
-
-    .image-row2 img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
+      display: block;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    }
-
-    .container-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-bottom: 24px;
-    }
-
-    .container-layout .left img,
-    .container-layout .right img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-    }
-
-    .container-layout .right {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      background-color: rgba(0, 0, 0, 0.02);
     }
 
     /* --- FOOTER --- */
@@ -360,9 +282,6 @@
         grid-template-columns: 1fr;
         gap: 32px;
       }
-      .container-layout {
-        grid-template-columns: 1fr;
-      }
       .page-intro, .main-container {
         padding-left: 20px;
         padding-right: 20px;
@@ -372,7 +291,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <a href="index.html" class="logo">
       <img src="logo.png" alt="Logo" class="logo-img" onerror="this.style.display='none'">
@@ -385,98 +303,89 @@
     </nav>
   </header>
 
-  <!-- PAGE INTRO -->
   <div class="page-intro">
-    <h1 class="page-title">yola</h1>
+    <h1 class="page-title">fruitstyle</h1>
     <a href="index.html" class="back-link">&larr; back home</a>
   </div>
 
-  <!-- MAIN CONTENT CONTAINER -->
   <main class="main-container">
 
-    <!-- HERO MEDIA (INDOORS HOVER-SWAP) -->
     <div class="hero-wrapper">
-      <img src="images/indoor_00.png" alt="Indoor Concept 1" class="image-1">
-      <img src="images/indoor_01.png" alt="Indoor Concept 2" class="image-2">
+      <img src="images/fruitstyle_poster.png" alt="Fruitstyle Poster">
     </div>
 
-    <!-- OVERVIEW & METADATA BLOCK -->
     <div class="project-overview-grid">
       <div class="overview-text">
         <p>
-          Yola is a shortfilm about migration, connection and spiritual awakening. Had the pleasure to contribute to the making of this project along with an amazing team.
+          Worked along with a team in a vertical slice of Fruitstyle. In this videogame developed in Unreal Engine you play as Croco, the coolest skater in town, pulling off twists and jumps over obstacles to rack up points and win the Fruistyle Cup.
         </p>
       </div>
       <div class="project-meta">
         <div class="meta-item">
           <span class="meta-label">Category</span>
-          <span class="meta-value">2D Animated Shortfilm</span>
+          <span class="meta-value">Videogame</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Tools</span>
-          <span class="meta-value">Concept Art & Digital Painting</span>
+          <span class="meta-label">Engine & Tools</span>
+          <span class="meta-value">Photoshop, Blender, Unreal Engine</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Role</span>
-          <span class="meta-value">Environment & Prop Design</span>
+          <span class="meta-value">Character design, UI Art, Modeling & Look Dev </span>
         </div>
       </div>
     </div>
 
-    <!-- SECTION 01: ENVIRONMENT AND PROP DESIGN -->
     <section class="exhibit-section">
-      <h2 class="section-title">01. environment and prop design</h2>
-      
-      <h3 class="section-subtitle">Indoors</h3>
-      <div class="image-row">
-        <img src="images/still09.PNG" alt="Indoor Still 1">
-        <img src="images/still02.PNG" alt="Indoor Still 2">
-      </div>
-      <p class="exhibit-text">
-        Designed environments conveying the visual style of the film, using backgrounds to create a contrast with the characters.
-      </p>
+      <h2 class="section-title">01. concept art</h2>
+      <img src="images/croco_ca.png" alt="Concept Art" class="media-img">
+    </section>
 
-      <h3 class="section-subtitle">Outdoors</h3>
-      <div class="image-grid">
-        <img src="images/sky_01.png" alt="Sky 1">
-        <img src="images/sky_04.png" alt="Sky 4">
-        <img src="images/sky_03.png" alt="Sky 3">
-      </div>
-      
-      <img src="images/sky_02.png" alt="Sky Concept 2" class="media-img">
-      
-      <div class="image-row2">
-        <img src="images/still10.PNG" alt="Outdoor Still 1">
-        <img src="images/still07.PNG" alt="Outdoor Still 2">
-        <img src="images/still06.PNG" alt="Outdoor Still 3">
-      </div>
+    <section class="exhibit-section">
+      <h2 class="section-title">02. ui art</h2>
       <p class="exhibit-text">
-        An important part of the film develops in the ocean, for this designed backgrounds of the sky reflecting different times of the day.
+        Worked on creating the visual identity of the game. Designing logo, buttons, triggers, combo feedbacks, signs, and more elements to be implemented by the UI designer.
       </p>
+      <img src="images/events.png" alt="UI Events" class="media-img">
+      <img src="images/buttons.png" alt="UI Buttons" class="media-img">
+      <img src="images/elements.png" alt="UI Elements" class="media-img">
+      <img src="images/combos.png" alt="UI Combos" class="media-img">
+      <video class="media-video" autoplay loop muted playsinline>
+        <source src="videos/Gameplay.mp4" type="video/mp4">
+      </video>
+    </section>
 
-      <div class="container-layout">
-        <div class="left">
-          <img src="images/outdoor_00.png" alt="Outdoor Asset Layout">
-        </div>
-        <div class="right">
-          <img src="images/asset_03.png" alt="Prop Asset 3">
-          <img src="images/asset_01.png" alt="Prop Asset 1">
-        </div>
-      </div>
+    <section class="exhibit-section">
+      <h2 class="section-title">03. 3d models</h2>
+      <img src="images/croco_renders.png" alt="Croco Renders" class="media-img">
+      
+      <h3 class="section-subtitle">Character Preview in Unreal Engine</h3>
+      <video class="media-video" autoplay loop muted playsinline>
+        <source src="videos/Animation.mp4" type="video/mp4">
+      </video>
+
+      <h3 class="section-subtitle">3D Models: The Redesign</h3>
+      <video class="media-video" autoplay loop muted playsinline>
+        <source src="videos/croco.mp4" type="video/mp4">
+      </video>
       <p class="exhibit-text">
-        Created 2D props to be used and interacted with by characters on key scenes.
+        Made adjustments primarily to materials and textures, seeking to increase color contrast to improve visual clarity in gameplay. In terms of sillouette, modifications were made to thicken legs and ensure Croco has a clear shape from distance.
       </p>
+      <video class="media-video" autoplay loop muted playsinline>
+        <source src="videos/skate.mp4" type="video/mp4">
+      </video>
+    </section>
 
-      <div class="image-row">
-        <img src="images/still01.PNG" alt="Film Still 1">
-        <img src="images/still04.PNG" alt="Film Still 2">
-      </div>
-      <img src="images/asset_02.png" alt="Prop Asset 2" class="media-img">
+    <section class="exhibit-section">
+      <h2 class="section-title">04. illustration on skateboard</h2>
+      <img src="images/Skate_Ill.png" alt="Skateboard Illustration" class="media-img">
+      <p class="exhibit-text">
+        Illustrated elements that were used to texture Croco's skateboard.
+      </p>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <ul class="social-links">
       <li>
@@ -494,12 +403,8 @@
         </a>
       </li>
     </ul>
+    <span class="copyright">&copy; 2026 Valeria Zavaleta. All rights reserved.</span>
   </footer>
 
-  <script>
-    document.querySelectorAll("img").forEach(img => {
-      img.addEventListener("contextmenu", e => e.preventDefault());
-    });
-  </script>
 </body>
 </html>
