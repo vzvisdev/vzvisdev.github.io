@@ -109,7 +109,7 @@
       z-index: 1;
     }
 
-    /* RESTORED EXACT ORIGINAL GLOW STYLING */
+    /* PREVENT SVG BOUNDARY EDGE CLIPPING ON MOBILE */
     .glow-svg {
       position: absolute;
       top: 0;
@@ -118,11 +118,12 @@
       height: 100%;
       pointer-events: none;
       z-index: 2;
-      overflow: visible !important; /* Keeps glow visible beyond SVG container bounds */
+      overflow: visible !important;
       filter: drop-shadow(0 0 10px #ff77c2) 
               drop-shadow(0 0 25px #c25898) 
               drop-shadow(0 0 50px #c25898);
       mix-blend-mode: screen;
+      will-change: transform;
     }
 
     .wireframe-layer {
@@ -278,7 +279,7 @@
 
     <svg class="glow-svg">
       <defs>
-        <filter id="ultraNeon" x="-300%" y="-300%" width="700%" height="700%">
+        <filter id="ultraNeon" filterUnits="userSpaceOnUse" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blurOuter" />
           <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blurMid" />
           <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blurInner" />
@@ -399,8 +400,13 @@
 
     function updateSpotlight(e) {
       const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+      
+      // Standardize touch vs pointer coordinates
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
 
       const { R, r, smooth } = getSpotlightDimensions();
 
