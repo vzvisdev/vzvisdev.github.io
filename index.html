@@ -89,7 +89,7 @@
       overflow: hidden;
       cursor: crosshair;
       border-radius: 0;
-      touch-action: none; /* Prevents scroll blocking during touch interactions */
+      touch-action: none;
       background: radial-gradient(circle at center, #310f50 0%, #03001c 70%);
       box-shadow: inset 0 0 15px rgba(187, 78, 138, 0.2);
     }
@@ -109,6 +109,7 @@
       z-index: 1;
     }
 
+    /* RESTORED EXACT ORIGINAL GLOW STYLING */
     .glow-svg {
       position: absolute;
       top: 0;
@@ -117,9 +118,10 @@
       height: 100%;
       pointer-events: none;
       z-index: 2;
-      overflow: visible !important; /* Fixes edge clipping on glow filter */
-      filter: drop-shadow(0 0 8px #ff77c2) 
-              drop-shadow(0 0 20px #c25898);
+      overflow: visible !important; /* Keeps glow visible beyond SVG container bounds */
+      filter: drop-shadow(0 0 10px #ff77c2) 
+              drop-shadow(0 0 25px #c25898) 
+              drop-shadow(0 0 50px #c25898);
       mix-blend-mode: screen;
     }
 
@@ -276,10 +278,10 @@
 
     <svg class="glow-svg">
       <defs>
-        <filter id="ultraNeon" x="-200%" y="-200%" width="500%" height="500%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blurOuter" />
-          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blurMid" />
-          <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blurInner" />
+        <filter id="ultraNeon" x="-300%" y="-300%" width="700%" height="700%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blurOuter" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blurMid" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blurInner" />
 
           <feMerge>
             <feMergeNode in="blurOuter" />
@@ -386,7 +388,6 @@
 
     let ticking = false;
 
-    // Dynamically scales down the reveal star size on mobile viewports
     function getSpotlightDimensions() {
       const isMobile = window.innerWidth <= 600;
       return {
@@ -442,7 +443,6 @@
     container.addEventListener('pointerup', resetSpotlight);
     container.addEventListener('pointercancel', resetSpotlight);
 
-    // Prevent default context menu
     document.querySelectorAll("img").forEach(img => {
       img.addEventListener("contextmenu", e => e.preventDefault());
     });
