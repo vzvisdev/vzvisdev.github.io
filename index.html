@@ -24,9 +24,8 @@
       background-color: #fdfff6;
       padding: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      
-      position: relative;      /* 🔥 REQUIRED FOR STICKERS */
-      overflow-x: hidden;      /* 🔥 FIX MOBILE SCROLL */
+      position: relative;
+      overflow-x: hidden;
       overflow-y: auto;
     }
 
@@ -90,8 +89,7 @@
       overflow: hidden;
       cursor: crosshair;
       border-radius: 0;
-      touch-action: none;
-      
+      touch-action: none; /* Prevents scroll blocking during touch interactions */
       background: radial-gradient(circle at center, #310f50 0%, #03001c 70%);
       box-shadow: inset 0 0 15px rgba(187, 78, 138, 0.2);
     }
@@ -119,16 +117,16 @@
       height: 100%;
       pointer-events: none;
       z-index: 2;
-      filter: drop-shadow(0 0 10px #ff77c2) 
-              drop-shadow(0 0 25px #c25898) 
-              drop-shadow(0 0 50px #c25898);
+      overflow: visible !important; /* Fixes edge clipping on glow filter */
+      filter: drop-shadow(0 0 8px #ff77c2) 
+              drop-shadow(0 0 20px #c25898);
       mix-blend-mode: screen;
     }
 
     .wireframe-layer {
       background-image: url('wireframe.png');
       clip-path: path("M 0 0");
-      will-change: clip-path, filter;
+      will-change: clip-path;
       z-index: 3;
       filter: brightness(1.25) contrast(1.1) drop-shadow(0 0 10px rgba(255, 188, 226, 0.6));
     }
@@ -139,15 +137,12 @@
       max-width: 1280px;
       padding: 100px 32px 140px 32px;
       background-color: #fdfff6;
-      
-      /* Grid asimétrico tipo galería de arte */
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 36px;
       align-items: center;
     }
 
-    /* Estilo de Marco Elegante */
     .frame {
       position: relative;
       padding: 0;
@@ -183,18 +178,15 @@
       transform: scale(1.04);
     }
 
-    /* Gallery Wall Layout (7 Frames) */
     .frame-1 { grid-column: span 7; height: 460px; }
     .frame-2 { grid-column: span 5; height: 380px; margin-top: 40px; }
-
     .frame-3 { grid-column: span 4; height: 420px; margin-top: -20px; }
     .frame-4 { grid-column: span 4; height: 350px; }
     .frame-5 { grid-column: span 4; height: 440px; margin-top: -30px; }
-
     .frame-6 { grid-column: span 6; height: 380px; margin-top: 20px; }
     .frame-8 { grid-column: span 6; height: 380px; margin-top: 20px; }
 
-    /* --- FOOTER / SOCIAL MEDIA LINKS --- */
+    /* --- FOOTER --- */
     .footer {
       width: 100%;
       padding: 40px 32px;
@@ -204,14 +196,6 @@
       flex-direction: column;
       align-items: center;
       gap: 20px;
-    }
-
-    .footer-title {
-      font-size: 0.9rem;
-      font-weight: 300;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #666666;
     }
 
     .social-links {
@@ -241,13 +225,6 @@
       fill: currentColor;
     }
 
-    .copyright {
-      font-size: 0.8rem;
-      color: #999999;
-      font-weight: 300;
-      margin-top: 8px;
-    }
-
     /* --- RESPONSIVE OVERRIDES --- */
     @media (max-width: 900px) {
       .wall-gallery {
@@ -264,16 +241,18 @@
     }
 
     @media (max-width: 600px) {
+      .header {
+        padding: 16px 20px;
+      }
+      .nav-links {
+        gap: 16px;
+      }
       .wall-gallery {
         grid-template-columns: 1fr;
       }
-    }
-
-    /* VERY SMALL PHONES */
-    @media (max-width: 480px) {
-      .deco-2,
-      .deco-4 {
-        display: none;
+      .container {
+        height: 65vh;
+        min-height: 380px;
       }
     }
   </style>
@@ -297,10 +276,10 @@
 
     <svg class="glow-svg">
       <defs>
-        <filter id="ultraNeon" x="-100%" y="-100%" width="300%" height="300%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blurOuter" />
-          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blurMid" />
-          <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blurInner" />
+        <filter id="ultraNeon" x="-200%" y="-200%" width="500%" height="500%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blurOuter" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blurMid" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blurInner" />
 
           <feMerge>
             <feMergeNode in="blurOuter" />
@@ -326,7 +305,6 @@
   </div>
 
   <section class="wall-gallery" id="projects">
-    
     <div class="frame frame-1">
       <a href="island.html" class="project-link">
         <div class="frame-img-wrapper">
@@ -339,7 +317,7 @@
       <a href="boonie.html" class="project-link">
         <div class="frame-img-wrapper">
           <img src="boonie.png" alt="Project 2" onerror="this.src='https://via.placeholder.com/600x500/03001c/ffffff?text=Project+2'">
-      </div>
+        </div>
       </a>
     </div>
 
@@ -347,15 +325,15 @@
       <a href="maxxi.html" class="project-link">
         <div class="frame-img-wrapper">
           <img src="Maxxi.png" alt="Project 3" onerror="this.src='https://via.placeholder.com/500x600/bb4e8a/ffffff?text=Project+3'">
-      </div>
+        </div>
       </a>
     </div>
 
     <div class="frame frame-4">
       <a href="luma.html" class="project-link">
-      <div class="frame-img-wrapper">
-        <img src="Luma.png" alt="Project 4" onerror="this.src='https://via.placeholder.com/600x450/1e0a38/ffffff?text=Project+4'">
-      </div>
+        <div class="frame-img-wrapper">
+          <img src="Luma.png" alt="Project 4" onerror="this.src='https://via.placeholder.com/600x450/1e0a38/ffffff?text=Project+4'">
+        </div>
       </a>
     </div>
 
@@ -363,7 +341,7 @@
       <a href="fruitstyle.html" class="project-link">
         <div class="frame-img-wrapper">
           <img src="croco.png" alt="Project 5" onerror="this.src='https://via.placeholder.com/500x650/4a154b/ffffff?text=Project+5'">
-      </div>
+        </div>
       </a>
     </div>
 
@@ -377,15 +355,14 @@
 
     <div class="frame frame-8">
       <a href="yola.html" class="project-link">
-      <div class="frame-img-wrapper">
-        <img src="still07.png" alt="Project 8" onerror="this.src='https://via.placeholder.com/600x500/521262/ffffff?text=Project+8'">
-      </div>
-       </a>
+        <div class="frame-img-wrapper">
+          <img src="still07.png" alt="Project 8" onerror="this.src='https://via.placeholder.com/600x500/521262/ffffff?text=Project+8'">
+        </div>
+      </a>
     </div>
-
   </section>
 
-   <footer class="footer">
+  <footer class="footer">
     <ul class="social-links">
       <li>
         <a href="https://instagram.com/glowscale" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
@@ -407,16 +384,24 @@
     const wireframe = document.getElementById('wireframe');
     const glowPath = document.getElementById('glowPath');
 
-    const R = 135;
-    const r = 43;
-    const smooth = 22;
-
     let ticking = false;
+
+    // Dynamically scales down the reveal star size on mobile viewports
+    function getSpotlightDimensions() {
+      const isMobile = window.innerWidth <= 600;
+      return {
+        R: isMobile ? 85 : 135,
+        r: isMobile ? 27 : 43,
+        smooth: isMobile ? 14 : 22
+      };
+    }
 
     function updateSpotlight(e) {
       const rect = container.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
+
+      const { R, r, smooth } = getSpotlightDimensions();
 
       const d = [
         `M ${x} ${y - R}`,
@@ -455,8 +440,9 @@
     container.addEventListener('pointermove', onPointerMove);
     container.addEventListener('pointerleave', resetSpotlight);
     container.addEventListener('pointerup', resetSpotlight);
+    container.addEventListener('pointercancel', resetSpotlight);
 
-    // Prevent image context menu
+    // Prevent default context menu
     document.querySelectorAll("img").forEach(img => {
       img.addEventListener("contextmenu", e => e.preventDefault());
     });
